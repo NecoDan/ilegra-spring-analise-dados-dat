@@ -13,7 +13,8 @@ public final class FormatterUtil {
     }
 
     private static BigDecimal getOnlyBigDecimal(String base) {
-        base = base.replace(',', '.');
+        if (base.contains(","))
+            base = base.replace(',', '.');
         return new BigDecimal(base);
     }
 
